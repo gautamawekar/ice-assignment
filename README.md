@@ -135,6 +135,24 @@ curl --request POST \
 curl "http://localhost:8080/tracks/search?artistName=gautam&page=1&size=5"
 ```
 
+### Error format
+
+```json
+{
+  "errors": [
+    {
+      "code": "1001",
+      "message": "Artist Name cannot be empty"
+    }
+  ]
+}
+```
+
+Each error has a code which identifies which part of the application has failed
+- 1000 series is for Artist profile
+- 2000 series is for Track management
+- 4000 series is for artist of the day
+
 ## Notes
 
 - Entries are stored in the H2 database and initialized using `ice_schema.sql`.
