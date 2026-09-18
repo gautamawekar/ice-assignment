@@ -1,0 +1,26 @@
+info:
+  name: fetch tracks for Abdelilah
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: http://localhost:8080/tracks/search?artistName=Abdelilah&page=1&size=5
+  params:
+    - name: artistName
+      value: Abdelilah
+      type: query
+    - name: page
+      value: "1"
+      type: query
+    - name: size
+      value: "5"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

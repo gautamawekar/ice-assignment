@@ -1,0 +1,23 @@
+info:
+  name: Update Artist Name
+  type: http
+  seq: 9
+
+http:
+  method: PUT
+  url: http://localhost:8080/artists
+  body:
+    type: json
+    data: |-
+      {
+        "artistId": 1,
+        "updatedName": "Gautam Changed"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
