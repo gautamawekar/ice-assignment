@@ -46,6 +46,7 @@ public class ArtistProfileService {
         }
         var entity = this.profileRepository.findFirstByArtistOfTheDayMarker(false)
                 .orElseThrow(() -> new ArtistOfTheDayException("4002", "Unable to fetch ArtistOfTheDay"));
+        entity.setArtistOfTheDayMarker(true);
         return new ArtistProfileResponse(entity.getArtistId(), entity.getArtistName());
     }
 }
